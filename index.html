@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnX Pro</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#1e0033,#090014,#001133);color:#fff}
+.container{max-width:1100px;margin:auto;padding:20px}
+.card{background:rgba(255,255,255,.08);padding:20px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+input,button{width:100%;padding:12px;border:none;border-radius:12px;margin-top:10px}
+input{background:#fff}
+button{background:#ffd54a;font-weight:700;cursor:pointer}
+.hero{text-align:center;padding:30px 0}.big{font-size:48px;font-weight:900}.muted{color:#ddd}.green{background:#22c55e;color:#000}.pink{background:#ec4899;color:#fff}.white{background:#fff;color:#000}
+.ad{height:140px;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,255,255,.3);border-radius:16px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<div>✔ Trusted Platform • ✔ Daily Rewards • ✔ Secure Withdraw</div>
+<div class="big">EarnX Pro</div>
+<p class="muted">Tasks • Surveys • Referral • Ads • Realistic Demo</p>
+</div>
+
+<div class="grid">
+<div class="card"><h2>Wallet</h2><h1 id="wallet">₹0</h1><p>Coins: <span id="coins">0</span></p></div>
+<div class="card"><h2>Login</h2><input id="email" placeholder="Enter Email"><button class="pink" onclick="login()">Start Earning</button><p id="user">Guest</p></div>
+<div class="card"><h2>Withdraw</h2><input id="upi" placeholder="UPI ID"><button class="green" onclick="withdrawMoney()">Min ₹300</button><p id="status"></p></div>
+</div>
+
+<h2>Top Tasks</h2>
+<div class="grid">
+<div class="card"><h3>Rewarded Video</h3><p>Earn ₹5</p><button onclick="earn(5)">Complete</button></div>
+<div class="card"><h3>Survey</h3><p>Earn ₹10</p><button onclick="earn(10)">Complete</button></div>
+<div class="card"><h3>Referral</h3><p>Earn ₹15</p><button onclick="earn(15)">Complete</button></div>
+<div class="card"><h3>Daily Bonus</h3><p>Earn ₹3</p><button onclick="earn(3)">Claim</button></div>
+</div>
+
+<div class="grid">
+<div class="card"><h2>Leaderboard</h2><p>1. Rahul ₹1200</p><p>2. Neha ₹980</p><p>3. You</p></div>
+<div class="card"><h2>Ads Zone</h2><div class="ad">Paste Google AdSense Code Here</div></div>
+</div>
+
+<div class="grid">
+<div class="card"><h2>FAQ</h2><p>Min withdraw ₹300</p><p>Referral ₹15</p><p>Survey ₹10</p></div>
+<div class="card"><h2>Payment Proof</h2><p>Rahul got ₹300</p><p>Neha got ₹500</p></div>
+<div class="card"><h2>Contact</h2><p>Email: support@earnxpro.com</p></div>
+</div>
+</div>
+<script>
+let wallet=0,coins=0;
+function update(){document.getElementById('wallet').innerText='₹'+wallet;document.getElementById('coins').innerText=coins}
+function earn(v){wallet+=v;coins+=v*10;update()}
+function login(){document.getElementById('user').innerText=document.getElementById('email').value||'Guest'}
+function withdrawMoney(){if(wallet<300){document.getElementById('status').innerText='Need ₹300 minimum';return;}wallet-=300;document.getElementById('status').innerText='Withdraw Request Sent';update()}
+update();
+</script>
+</body>
+</html>
