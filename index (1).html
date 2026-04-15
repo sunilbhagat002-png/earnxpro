@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free Age Calculator, Horoscope, Date Tools and more. Fast mobile friendly SEO optimized tools website.">
+<meta name="keywords" content="age calculator, horoscope, date calculator, birthday facts, free tools">
+<meta name="robots" content="index,follow">
+<title>Age Calculator Pro | Free Smart Tools</title>
+<!-- Google Analytics: Replace G-XXXX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-XXXX');</script>
+<style>
+:root{--bg:#020617;--card:#0f172a;--text:#f8fafc;--muted:#94a3b8;--accent:#38bdf8}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#020617,#0f172a,#1e293b);color:var(--text);padding:14px}
+.container{max-width:900px;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{transition:.25s ease;position:relative;overflow:hidden;}.card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 45px rgba(56,189,248,.18)} .card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.04));pointer-events:none}
+.card{background:rgba(15,23,42,.96);padding:20px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08)}
+h1{text-align:center;font-size:34px;margin:10px 0}.sub{text-align:center;color:var(--muted);margin-bottom:20px}
+input,button,select{width:100%;padding:13px;border-radius:14px;border:none;margin-top:10px;font-size:15px}
+input,select{background:#111827;color:#fff;border:1px solid #334155}button{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff;font-weight:700;cursor:pointer}
+.result,.mini{margin-top:14px;padding:14px;background:#111827;border-radius:16px;line-height:1.7}.ad{margin:18px 0;background:#fff;color:#111;padding:16px;border-radius:18px;text-align:center;min-height:90px}
+.footer{text-align:center;color:var(--muted);font-size:13px;margin:18px 0}
+a{color:#7dd3fc;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Age Calculator Pro</h1>
+<div class="sub">SEO Ready • Fast Loading • Mobile Friendly • Smart Free Tools</div>
+<div class="ad"><!-- Adsense Top Banner --> Top Banner Ad Space</div>
+<div class="grid">
+<div class="card">
+<h2>🎂 Age Calculator</h2>
+<input type="date" id="dob">
+<button onclick="calcAge()">Calculate Age</button>
+<div class="result" id="result">Select your birth date.</div>
+</div>
+<div class="card">
+<h2>🔮 AI Horoscope</h2>
+<select id="sign"><option>Aries</option><option>Taurus</option><option>Gemini</option><option>Cancer</option><option>Leo</option><option>Virgo</option><option>Libra</option><option>Scorpio</option><option>Sagittarius</option><option>Capricorn</option><option>Aquarius</option><option>Pisces</option></select>
+<button onclick="showHoroscope()">Get Today Prediction</button>
+<div class="mini" id="horo">Choose your zodiac sign.</div>
+</div>
+<div class="card">
+<h2>🎉 Birthday Facts</h2>
+<button onclick="fact()">Generate Fact</button>
+<div class="mini" id="factbox">Interesting age facts will appear here.</div>
+</div>
+<div class="card">
+<h2>📅 Date Difference</h2>
+<input type="date" id="d1"><input type="date" id="d2">
+<button onclick="dateDiff()">Calculate Days</button>
+<div class="mini" id="days">Enter two dates.</div>
+</div>
+</div>
+<div class="grid">
+<div class="card"><h2>✨ Premium Experience</h2><div class="mini">Glassmorphism cards • Smooth animations • Luxury layout • Viral design optimized for clicks and sharing.</div></div>
+<div class="card"><h2>🚀 Trending Features</h2><div class="mini">Ultra modern interface, responsive mobile UI, premium gradients, engaging sections and fast interactions.</div></div>
+<div class="card"><h2>💎 Pro Look</h2><div class="mini">Built to look like a top ranked premium tool website with clean spacing and stylish components.</div></div>
+<div class="card"><h2>🔥 Viral Growth</h2><div class="mini">Ready for social sharing, reels promotion, ads traffic and repeat visitors.</div></div>
+</div>
+<div class="ad"><!-- Adsense Bottom Banner --> Bottom Banner Ad Space</div>
+<div class="footer">Visitors: <span id="visits">0</span> | Share this tool for daily traffic growth</div>
+</div>
+<script>
+function calcAge(){const v=dob.value;if(!v){result.innerHTML='Please select date';return;}const b=new Date(v),n=new Date();let y=n.getFullYear()-b.getFullYear(),m=n.getMonth()-b.getMonth(),d=n.getDate()-b.getDate();if(d<0){m--;d+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}result.innerHTML=`You are <b>${y}</b> years <b>${m}</b> months <b>${d}</b> days old.`}
+function showHoroscope(){const msgs=['Great opportunities ahead today.','Focus on money and savings.','A surprise message may come.','Good day to start something new.','Stay calm and avoid arguments.','Luck supports your plans today.'];horo.innerHTML=msgs[Math.floor(Math.random()*msgs.length)]}
+function fact(){const arr=['People blink about 15 times per minute.','Your heart beats around 100,000 times a day.','Smiling can improve mood instantly.','Birthdays are shared by millions worldwide.'];factbox.innerHTML=arr[Math.floor(Math.random()*arr.length)]}
+function dateDiff(){if(!d1.value||!d2.value){days.innerHTML='Select both dates';return;}const a=new Date(d1.value),b=new Date(d2.value);const diff=Math.abs(b-a)/(1000*60*60*24);days.innerHTML=`Difference: <b>${diff}</b> days`;}
+
+let c=localStorage.getItem('visits')||0;c++;localStorage.setItem('visits',c);visits.innerText=c;
+</script>
+</body>
+</html>
